@@ -247,6 +247,8 @@ def executor(ip, mgmt_ip, schedulers, thread_id):
                         utils.generate_error_response(schedule, client, fname)
                         continue
 
+                    print(function_cache)
+
                     # We don't support actual batching for when we receive a
                     # schedule before a trigger, so everything is just a batch of
                     # size 1 if anything.

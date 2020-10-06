@@ -45,6 +45,7 @@ def pin(pin_socket, pusher_cache, kvs, status, function_cache, runtimes,
         func = utils.retrieve_function(name, kvs, user_library)
 
     if name not in function_cache:
+        print(f"writing function cache for entry {name}, it's a type {type(func)}")
         function_cache[name] = func
 
     if name not in status.functions:
