@@ -89,6 +89,8 @@ if [[ "$ROLE" = "executor" ]]; then
     python3.6 cloudburst/server/executor/server.py
 
     if [[ "$?" = "1" ]]; then
+      # Debug: don't immediately exit, loudly wait for the inspection
+      while true; do sleep 10; done
       exit 1
     fi
   done
